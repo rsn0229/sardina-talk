@@ -105,24 +105,6 @@
     scrollbar-width: thin;
 }
 
-/* 메시지 버블 스타일 (기존 디자인에 맞춤) */
-.msg-bubble {
-    padding: 8px 12px;
-    margin: 5px 10px;
-    border-radius: 15px;
-    background: #f0f7ff;
-    font-size: 12px;
-    display: inline-block;
-    color: #666;
-}
-
-/* 통신 상태(입력 중) 스타일 */
-.msg-typing {
-    background: #eef2f5;
-    font-style: italic;
-    font-size: 11px;
-}
-
 /* 점 세 개 애니메이션 */
 .loading-dots::after {
     content: '.';
@@ -130,16 +112,46 @@
 }
 @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60% { content: '...'; } 80%, 100% { content: ''; } }
 
-.msg-bubble.A { /* 내 톡 (오른쪽) */
-    align-self: flex-end;
-    color: #333333;
-    border: 1px solid #76a2c4; /* 내 톡은 파란색 테두리 */
-    border-bottom-right-radius: 2px;
+/* 메시지 버블 기본 스타일 */
+.msg-bubble {
+    padding: 8px 12px;
+    margin: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+    max-width: 85%; /* 글이 너무 길어지면 줄바꿈 되도록 설정 */
+    word-break: break-word;
+    line-height: 1.4;
 }
-.msg-bubble.B { /* 상대 톡 (왼쪽) */
-    align-self: flex-start;
-    color: #555555;
-    border: 1px solid #dce4eb; /* 상대 톡은 회색 테두리 */
+
+/* 💛 A: 로잔나 (상대 톡 - 왼쪽 / 노란색 계열) */
+.msg-bubble.A { 
+    align-self: flex-start; /* 왼쪽 정렬 */
+    color: #555555; /* 부드러운 진회색 텍스트 */
+    background-color: #fffdf2; /* 아주 연한 노란색 바탕 */
+    border: 1px solid #ffe599; /* 로잔나의 금발/닻 상징색 */
+    border-bottom-left-radius: 2px; /* 말풍선 꼬리 방향 (왼쪽) */
+    border-bottom-right-radius: 15px; /* 반대쪽은 둥글게 복원 */
+}
+
+/* 💙 B: 마야 (내 톡 - 오른쪽 / 파란색 계열) */
+.msg-bubble.B { 
+    align-self: flex-end; /* 오른쪽 정렬 */
+    color: #333333; /* 또렷한 진회색 텍스트 */
+    background-color: #f0f7ff; /* 기존의 연한 파란색 바탕 */
+    border: 1px solid #76a2c4; /* 마야의 파도 상징색 */
+    border-bottom-right-radius: 2px; /* 말풍선 꼬리 방향 (오른쪽) */
+    border-bottom-left-radius: 15px; /* 반대쪽은 둥글게 복원 */
+}
+
+/* 통신 상태(입력 중) 스타일 */
+.msg-typing {
+    background-color: #eef2f5 !important;
+    border: 1px solid #dce4eb !important;
+    color: #888888 !important;
+    font-style: italic;
+    font-size: 11px;
+    align-self: flex-start; /* 상대방이 치는 것처럼 보이기 위해 왼쪽 고정 */
     border-bottom-left-radius: 2px;
 }
 
