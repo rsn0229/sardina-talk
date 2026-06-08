@@ -50,7 +50,7 @@ async function loadMsgs() {
     } catch(e) { console.error("데이터 로딩 실패", e); }
 }
 
-// 버튼 초기화 (이미 작성하신 코드와 같습니다)
+// 버튼 초기화
 function initMessenger() {
     const toggleBtn = document.getElementById('messengerToggle');
     const windowEl = document.getElementById('messengerWindow');
@@ -60,11 +60,21 @@ function initMessenger() {
         return;
     }
 
-    toggleBtn.onclick = () => {
-        // 이제 is-open 클래스가 붙으면서 CSS 애니메이션이 동작합니다!
-        windowEl.classList.toggle('is-open');
+    toggleBtn.onclick = (e) => {
+        // 1. 이벤트 전파를 막아서 '바깥 클릭' 로직과 충돌 방지
+        e.stopPropagation(); 
         
-        if(windowEl.classList.contains('is-open')) {
+        // 2. 창이 이미 열려있는지 확인
+        const isOpening = !windowEl.classList.contains('is-open');
+        
+        // 3. 다른 모든 창을 닫음 (closeAll 함수 사용)
+        if (typeof closeAll === 'function') {
+            closeAll();
+        }
+        
+        // 4. 나만 열기
+        if (isOpening) {
+            windowEl.classList.add('is-open');
             loadMsgs();
         }
     };
