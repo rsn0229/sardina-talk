@@ -30,7 +30,7 @@ async function loadMsgs() {
     } catch(e) { console.error("데이터 로딩 실패", e); }
 }
 
-// 버튼 초기화
+// 버튼 초기화 (이미 작성하신 코드와 같습니다)
 function initMessenger() {
     const toggleBtn = document.getElementById('messengerToggle');
     const windowEl = document.getElementById('messengerWindow');
@@ -41,10 +41,9 @@ function initMessenger() {
     }
 
     toggleBtn.onclick = () => {
-        // .is-open 클래스를 붙였다 뗐다 합니다.
+        // 이제 is-open 클래스가 붙으면서 CSS 애니메이션이 동작합니다!
         windowEl.classList.toggle('is-open');
         
-        // 창이 열릴 때만 메시지 로드
         if(windowEl.classList.contains('is-open')) {
             loadMsgs();
         }
