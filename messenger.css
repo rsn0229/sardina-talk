@@ -129,3 +129,11 @@
     border: 1px solid #dce4eb; /* 상대 톡은 회색 테두리 */
     border-bottom-left-radius: 2px;
 }
+
+/* messenger.css 맨 아래에 추가 */
+
+/* 창이 열렸을 때 화면 안으로 이동 */
+#messengerWindow.is-open {
+    transform: translateX(0) !important;
+    display: flex !important;
+}
