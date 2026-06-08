@@ -1,29 +1,29 @@
-// 콕 찌르기 함수 (Form Submit 방식 - CORS 회피)
+// 콕 찌르기 함수 (더 똑똑하고 안전하게!)
 function sendReply() {
     const btn = document.querySelector('.msg-force-btn');
-    if(!btn) return;
+    if (!btn || btn.disabled) return; // 이미 누르는 중이면 무시
     
     btn.innerText = "찌르는 중...";
-    btn.disabled = true;
+    btn.disabled = true; // 버튼 비활성화 (연타 방지)
 
-    // 폼 제출 (CORS 오류 없음)
+    // 폼 제출
     document.getElementById('chatForm').submit();
 
-    // 전송 후 피드백 및 목록 새로고침
+    // 3초 뒤에 복구 및 메시지 로드
     setTimeout(() => {
         loadMsgs();
         btn.innerText = "콕 찌르기👆";
-        btn.disabled = false;
-    }, 1500);
+        btn.disabled = false; // 버튼 다시 활성화
+    }, 3000); // 서버 처리 시간을 고려해 3초로 넉넉하게 설정
 }
 
 // 메시지 로드 함수
 async function loadMsgs() {
     const b = document.getElementById('msgBody');
-    if(!b) return;
+    if (!b) return;
     try {
-        // GET 요청은 CORS 제약이 없으므로 그대로 사용합니다.
         const res = await fetch("https://script.google.com/macros/s/AKfycbxEV2WOOpx51GEYgNNtIwB8h3ItIKY4aZaILwRZIl2fxyQDQo2Nf6ZxKsR97YueZOw/exec?action=get");
+        if (!res.ok) throw new Error("로드 실패");
         const data = await res.json();
         b.innerHTML = data.messages.map(m => `<div class="msg-bubble ${m.speaker}">${m.text}</div>`).join('');
         b.scrollTop = b.scrollHeight;
