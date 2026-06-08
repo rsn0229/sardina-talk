@@ -30,6 +30,7 @@
 /* 호버 툴팁 */
 #messengerHoverBox { background: #dce4eb; color: #76a2c4; }
 
+/* 이 부분의 z-index를 수정하세요! */
 #messengerWindow {
     position: fixed;
     right: 20px;
@@ -38,14 +39,14 @@
     background: #ffffff;
     border: 1px solid #dce4eb;
     padding: 0;
-    display: flex !important; /* 상시 flex 유지 */
+    display: flex !important; 
     flex-direction: column; 
-    
-    /* 여기서 숨김 처리 */
     visibility: hidden; 
     transform: translateX(300px); 
-    transition: transform 0.4s ease, visibility 0.4s; /* 스르륵 효과 */
-    z-index: 10000 !important;
+    transition: transform 0.4s ease, visibility 0.4s; 
+    
+    /* 👇 변경된 부분: 버튼(2002)보다 높은 우선순위 부여 */
+    z-index: 2000 !important; 
 }
 
 /* 콕 찌르면 나타나는 스타일 */
