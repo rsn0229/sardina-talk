@@ -60,24 +60,22 @@ function initMessenger() {
         return;
     }
 
-    toggleBtn.onclick = (e) => {
-        // 1. 이벤트 전파를 막아서 '바깥 클릭' 로직과 충돌 방지
-        e.stopPropagation(); 
-        
-        // 2. 창이 이미 열려있는지 확인
-        const isOpening = !windowEl.classList.contains('is-open');
-        
-        // 3. 다른 모든 창을 닫음 (closeAll 함수 사용)
-        if (typeof closeAll === 'function') {
-            closeAll();
-        }
-        
-        // 4. 나만 열기
-        if (isOpening) {
-            windowEl.classList.add('is-open');
-            loadMsgs();
-        }
-    };
+// 메신저 스크립트의 toggleBtn.onclick 부분
+toggleBtn.onclick = (e) => {
+    e.stopPropagation(); 
+    
+    const isOpening = !windowEl.classList.contains('is-open');
+    
+    // 이제 window.closeAll을 통해 확실하게 다른 패널들을 닫습니다!
+    if (typeof window.closeAll === 'function') {
+        window.closeAll();
+    }
+    
+    if (isOpening) {
+        windowEl.classList.add('is-open');
+        loadMsgs();
+    }
+};
     console.log("메신저 버튼 연결 완료!");
 }
 
