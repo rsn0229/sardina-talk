@@ -151,13 +151,12 @@
 }
 
 .msg-body {
-    padding: 15px;
+    padding: 0;
     flex: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    scrollbar-width: thin;
 }
 
 /* 점 세 개 애니메이션 */
@@ -170,7 +169,7 @@
 /* 메시지 버블 기본 스타일 */
 .msg-bubble {
     padding: 8px 12px;
-    margin: 5px 10px;
+    margin: 5px 12px;
     border-radius: 15px;
     font-size: 12px;
     display: inline-block;
