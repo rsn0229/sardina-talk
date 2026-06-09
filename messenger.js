@@ -12,9 +12,12 @@ b.innerHTML = `
 
     try {
 
-        const res = await fetch(
-            "https://script.google.com/macros/s/AKfycbxEV2WOOpx51GEYgNNtIwB8h3ItIKY4aZaILwRZIl2fxyQDQo2Nf6ZxKsR97YueZOw/exec?action=get"
-        );
+const res = await fetch(
+    "https://script.google.com/macros/s/AKfycbxEV2WOOpx51GEYgNNtIwB8h3ItIKY4aZaILwRZIl2fxyQDQo2Nf6ZxKsR97YueZOw/exec?action=get&t=" + Date.now(),
+    {
+        cache: "no-store"
+    }
+);
 
         if (!res.ok) throw new Error("로드 실패");
 
