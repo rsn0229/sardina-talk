@@ -21,13 +21,31 @@ const res = await fetch(
 
         if (!res.ok) throw new Error("로드 실패");
 
-        const data = await res.json();
+const data = await res.json();
 
-        b.innerHTML = data.messages.map(m =>
-            `<div class="msg-bubble ${m.speaker}">${m.text}</div>`
-        ).join('');
+const MAX_MSGS = 45;
 
-        b.scrollTop = b.scrollHeight;
+const totalCount = data.messages.length;
+const visibleMessages = data.messages.slice(-MAX_MSGS);
+
+let html = '';
+
+if (totalCount > MAX_MSGS) {
+    html += `
+        <div class="msg-history-limit">
+            🌊오래 전의 물결은 수평선 너머로 흘러갔어요
+            <br>
+            최근 ${MAX_MSGS}개의 대화만 표시됩니다.
+        </div>
+    `;
+}
+
+html += visibleMessages.map(m =>
+    `<div class="msg-bubble ${m.speaker}">${m.text}</div>`
+).join('');
+
+b.innerHTML = html;
+b.scrollTop = b.scrollHeight;
 
     } catch(e) {
 
