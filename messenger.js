@@ -3,7 +3,7 @@ async function sendReply() {
     const btn = document.querySelector('.msg-force-btn');
     if(!btn || btn.disabled) return;
     
-    btn.innerText = "찌르는 중... (잠시만요!)";
+    btn.innerText = "답장 중... (잠시만요!)";
     btn.disabled = true;
 
     try {
@@ -31,7 +31,7 @@ async function sendReply() {
         // 6번(약 12초) 확인했는데도 안 오면 버튼 원래대로 복구
         if (checkCount >= 6) {
             clearInterval(checkInterval);
-            btn.innerText = "콕 찌르기👆";
+            btn.innerText = "답장";
             btn.disabled = false;
         }
     }, 2000); // 2000ms = 2초
