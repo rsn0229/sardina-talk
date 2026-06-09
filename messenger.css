@@ -88,7 +88,7 @@
     display: flex;
     align-items: center;
 
-    background: #fafafa;
+    background: #fbfbfb;
 
     color: #999;
     font-size: 12px;
@@ -122,28 +122,33 @@
 }
 
 .msg-force-btn {
-    flex-shrink:0;
+    flex-shrink: 0;
 
-    border:none;
+    width: 32px;
+    height: 32px;
 
-    background:#76a2c4;
-    color:white;
+    border: none;
+    border-radius: 50%;
 
-    height:28px;
-    padding:0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius:14px;
+    background: #eef2f5;
+    color: #aab4bc;
 
-    font-size:11px;
-    font-weight:bold;
+    cursor: default;
 
-    cursor:pointer;
+    padding: 0;
 }
 .msg-force-btn:hover {
     opacity:0.9;
 }
 .msg-force-btn:active { transform: scale(0.98); }
-.msg-force-btn:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }
+.msg-force-btn:disabled {
+    opacity: 1;
+    pointer-events: none;
+}
 
 .msg-body {
     padding: 15px;
