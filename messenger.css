@@ -35,7 +35,8 @@
     position: fixed;
     right: 20px;
     width: 280px; 
-    height: 380px; 
+    height: min(380px, 70vh);
+    min-height: 260px;
     background: #ffffff;
     border: 1px solid #dce4eb;
     padding: 0;
