@@ -192,7 +192,7 @@
 .msg-bubble.B { 
     align-self: flex-end; /* 오른쪽 정렬 */
     color: #333333; /* 또렷한 진회색 텍스트 */
-    background-color: #f0f7ff; /* 기존의 연한 파란색 바탕 */
+    background-color: #a8d0f0; /* 파란색 바탕 */
     border-bottom-right-radius: 2px; /* 말풍선 꼬리 방향 (오른쪽) */
     border-bottom-left-radius: 15px; /* 반대쪽은 둥글게 복원 */
 }
