@@ -49,6 +49,13 @@
     z-index: 2000 !important; 
 }
 
+@media (max-width: 768px) {
+    #messengerWindow {
+        width: min(238px, 75vw);
+        height: 323px;
+    }
+}
+
 /* 콕 찌르면 나타나는 스타일 */
 #messengerWindow.is-open {
     transform: translateX(0) !important;
@@ -68,24 +75,59 @@
     border-bottom: 1px solid #f0f0f0; /* 하단 얇은 선 */
 }
 
-/* 4. 메신저 푸터 (하단 영역) */
-.msg-footer {
-    background-color: #ffffff;
-    padding: 10px 15px;
-    border-top: 1px solid #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.msg-fake-input {
+    flex:1;
+
+    height:34px;
+
+    border:1px solid #dce4eb;
+    border-radius:18px;
+
+    padding:0 12px;
+
+    display:flex;
+    align-items:center;
+
+    color:#999;
+    font-size:12px;
+
+    background:#fafafa;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.msg-fake-input::after {
+    content:"";
+    width:1px;
+    height:14px;
+
+    background:#76a2c4;
+
+    margin-left:3px;
+
+    animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+    0%,50% {
+        opacity:1;
+    }
+
+    51%,100% {
+        opacity:0;
+    }
 }
 
 /* 5. 콕 찌르기 버튼: 창 스타일과 통일된 흰색 바탕 + 테두리 포인트 */
 .msg-force-btn {
-    width: 100%;
+    width:auto;
+    min-width:56px;
+    padding:8px 12px;
     background: #ffffff;
     color: #76a2c4; /* 스킨 포인트 컬러 */
     border: 1px solid #76a2c4; /* 테두리로만 포인트 */
     border-radius: 6px;
-    padding: 8px;
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
@@ -163,3 +205,5 @@
     transform: translateX(0) !important;
     display: flex !important;
 }
+
+
