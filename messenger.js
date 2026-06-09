@@ -3,13 +3,12 @@ async function loadMsgs() {
     const b = document.getElementById('msgBody');
     if (!b) return;
 
-    // 로딩 표시
-    b.innerHTML = `
-        <div class="msg-loading">
-            대화 내역을 불러오는 중
-            <span class="loading-dots"></span>
-        </div>
-    `;
+b.innerHTML = `
+    <div class="msg-loading">
+        대화 내역을 불러오는 중
+        <span class="loading-dots"></span>
+    </div>
+`;
 
     try {
 
