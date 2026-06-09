@@ -33,6 +33,7 @@ let html = '';
 if (totalCount > MAX_MSGS) {
     html += `
         <div class="msg-history-limit">
+            <div class="history-fade"></div>
             🌊오래 전의 물결은 수평선 너머로 흘러갔어요
             <br>
             최근 ${MAX_MSGS}개의 대화만 표시됩니다.
