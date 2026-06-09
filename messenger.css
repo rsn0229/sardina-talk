@@ -183,8 +183,7 @@
 .msg-bubble.A { 
     align-self: flex-start; /* 왼쪽 정렬 */
     color: #555555; /* 부드러운 진회색 텍스트 */
-    background-color: #fffdf2; /* 아주 연한 노란색 바탕 */
-    border: 1px solid #ffe599; /* 로잔나의 금발/닻 상징색 */
+    background-color: #ffe599; /* 아주 연한 노란색 바탕 */
     border-bottom-left-radius: 2px; /* 말풍선 꼬리 방향 (왼쪽) */
     border-bottom-right-radius: 15px; /* 반대쪽은 둥글게 복원 */
 }
@@ -194,7 +193,6 @@
     align-self: flex-end; /* 오른쪽 정렬 */
     color: #333333; /* 또렷한 진회색 텍스트 */
     background-color: #f0f7ff; /* 기존의 연한 파란색 바탕 */
-    border: 1px solid #76a2c4; /* 마야의 파도 상징색 */
     border-bottom-right-radius: 2px; /* 말풍선 꼬리 방향 (오른쪽) */
     border-bottom-left-radius: 15px; /* 반대쪽은 둥글게 복원 */
 }
