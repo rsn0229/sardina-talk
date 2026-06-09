@@ -174,7 +174,7 @@
     border-radius: 15px;
     font-size: 12px;
     display: inline-block;
-    max-width: 80%; /* 글이 너무 길어지면 줄바꿈 되도록 설정 */
+    max-width: 75%; /* 글이 너무 길어지면 줄바꿈 되도록 설정 */
     word-break: break-word;
     line-height: 1.4;
 }
