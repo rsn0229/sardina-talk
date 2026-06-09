@@ -229,15 +229,15 @@
 }
 
 .msg-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-    min-height: 100%;
+    transform: translate(-50%, -50%);
 
-    text-align: center;
     color: #888;
     font-size: 13px;
+    white-space: nowrap;
 }
 
 .loading-dots::after {
