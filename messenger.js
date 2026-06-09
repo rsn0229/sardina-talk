@@ -21,22 +21,6 @@ function initMessenger() {
         return;
     }
 
-// 메신저 스크립트의 toggleBtn.onclick 부분
-toggleBtn.onclick = (e) => {
-    e.stopPropagation(); 
-    
-    const isOpening = !windowEl.classList.contains('is-open');
-    
-    // 이제 window.closeAll을 통해 확실하게 다른 패널들을 닫습니다!
-    if (typeof window.closeAll === 'function') {
-        window.closeAll();
-    }
-    
-    if (isOpening) {
-        windowEl.classList.add('is-open');
-        loadMsgs();
-    }
-};
     console.log("메신저 버튼 연결 완료!");
 }
 
