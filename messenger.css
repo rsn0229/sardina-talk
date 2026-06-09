@@ -170,11 +170,11 @@
 /* 메시지 버블 기본 스타일 */
 .msg-bubble {
     padding: 8px 12px;
-    margin: 5px 12px;
+    margin: 10px 12px;
     border-radius: 15px;
     font-size: 12px;
     display: inline-block;
-    max-width: 85%; /* 글이 너무 길어지면 줄바꿈 되도록 설정 */
+    max-width: 80%; /* 글이 너무 길어지면 줄바꿈 되도록 설정 */
     word-break: break-word;
     line-height: 1.4;
 }
