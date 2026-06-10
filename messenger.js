@@ -36,7 +36,7 @@ if (totalCount > MAX_MSGS) {
     <div class="history-fade"></div>
 
     <div class="history-text">
-        🌊 오래된 파도는 수평선 너머로 흘러갔어요.
+        🌊오래된 물결은 수평선 너머로 흘러갔어요.
         <br>
         최근 45개의 대화만 표시됩니다.
     </div>
