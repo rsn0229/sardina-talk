@@ -39,14 +39,14 @@
     min-height: 260px;
     background: #ffffff;
     border: 1px solid #dce4eb;
+    border-radius: 12px;
+    overflow: hidden;
     padding: 0;
     display: flex !important; 
     flex-direction: column; 
     visibility: hidden; 
     transform: translateX(300px); 
     transition: transform 0.4s ease, visibility 0.4s; 
-    
-    /* 👇 변경된 부분: 버튼(2002)보다 높은 우선순위 부여 */
     z-index: 2000 !important; 
 }
 
