@@ -23,7 +23,7 @@ const res = await fetch(
 
 const data = await res.json();
 
-const MAX_MSGS = 25;
+const MAX_MSGS = 10;
 
 const totalCount = data.messages.length;
 const visibleMessages = data.messages.slice(-MAX_MSGS);
@@ -38,7 +38,7 @@ if (totalCount > MAX_MSGS) {
     <div class="history-text">
         🌊오래된 물결은 수평선 너머로 흘러갔어요.
         <br>
-        최근 25개의 대화만 표시됩니다.
+        최근 10개의 대화만 표시됩니다.
     </div>
 </div>
     `;
