@@ -299,23 +299,27 @@
     margin-bottom: 8px;
 }
 
+.msg-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px;
+}
+.msg-group.A { align-items: flex-start; }
+
+.msg-group.B { align-items: flex-end; }
+
 .msg-action {
     font-size: 10.5px;
     font-style: italic;
     max-width: 75%;
-    padding: 0 12px;
-    margin-bottom: -4px; 
+    padding: 0 4px;
+    margin-bottom: 4px; 
     word-break: break-word;
     line-height: 1.3;
 }
 
-.msg-action.A {
-    align-self: flex-start;
-    color: #9c8e6a; 
-}
+.msg-action.A { color: #9c8e6a; text-align: left; }
 
-.msg-action.B {
-    align-self: flex-end;
-    color: #7b91a6; 
-    text-align: right; 
-}
+.msg-action.B { color: #7b91a6; text-align: right; }
+
+.msg-group .msg-bubble { margin: 0; }
