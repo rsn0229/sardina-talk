@@ -44,19 +44,16 @@ if (totalCount > MAX_MSGS) {
     `;
 }
 
-// 💡 messenger.js 내 html 추가 부분 수정
 html += visibleMessages.map(m => {
-    let resultHtml = '';
-
+    let innerHtml = '';
     if (m.action) {
-        resultHtml += `<div class="msg-action ${m.speaker}">${m.action}</div>`;
+        innerHtml += `<div class="msg-action ${m.speaker}">${m.action}</div>`;
     }
 
     if (m.dialogue) {
-        resultHtml += `<div class="msg-bubble ${m.speaker}">${m.dialogue}</div>`;
+        innerHtml += `<div class="msg-bubble ${m.speaker}">${m.dialogue}</div>`;
     }
-    
-    return resultHtml;
+    return `<div class="msg-group ${m.speaker}">${innerHtml}</div>`;
 }).join('');
 
 b.innerHTML = html;
