@@ -44,9 +44,17 @@ if (totalCount > MAX_MSGS) {
     `;
 }
 
-html += visibleMessages.map(m =>
-    `<div class="msg-bubble ${m.speaker}">${m.text}</div>`
-).join('');
+html += visibleMessages.map(m => {
+    let contentHtml = '';
+    if (m.action) {
+        contentHtml += `<div class="msg-action">${m.action}</div>`;
+    }
+    if (m.dialogue) {
+        contentHtml += `<div class="msg-text">${m.dialogue}</div>`;
+    }
+    
+    return `<div class="msg-bubble ${m.speaker}">${contentHtml}</div>`;
+}).join('');
 
 b.innerHTML = html;
 b.scrollTop = b.scrollHeight;
