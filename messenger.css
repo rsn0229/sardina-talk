@@ -302,18 +302,20 @@
 .msg-action {
     font-size: 10.5px;
     font-style: italic;
-    margin-bottom: 5px;
+    max-width: 75%;
+    padding: 0 12px;
+    margin-bottom: -4px; 
+    word-break: break-word;
     line-height: 1.3;
 }
 
-.msg-bubble.A .msg-action {
+.msg-action.A {
+    align-self: flex-start;
     color: #9c8e6a; 
 }
 
-.msg-bubble.B .msg-action {
+.msg-action.B {
+    align-self: flex-end;
     color: #7b91a6; 
-}
-
-.msg-text {
-    word-break: break-word;
+    text-align: right; 
 }
