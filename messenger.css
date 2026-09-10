@@ -298,3 +298,22 @@
     );
     margin-bottom: 8px;
 }
+
+.msg-action {
+    font-size: 10.5px;
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.msg-bubble.A .msg-action {
+    color: #9c8e6a; 
+}
+
+.msg-bubble.B .msg-action {
+    color: #7b91a6; 
+}
+
+.msg-text {
+    word-break: break-word;
+}
